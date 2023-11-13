@@ -1,11 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import { searchMovies } from './src/api/apicalls'
 
 const App = () => {
+  console.log(searchMovies('Avengers'))
   return (
     <View>
       <Text>App</Text>
+
     </View>
   )
 }
