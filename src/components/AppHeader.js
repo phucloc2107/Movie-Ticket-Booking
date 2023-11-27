@@ -18,8 +18,6 @@ const AppHeader = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
