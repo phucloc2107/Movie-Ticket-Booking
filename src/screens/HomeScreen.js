@@ -58,7 +58,6 @@ const HomeScreen = ({ navigation }) => {
         })();
     }, []);
 
-
     const searchMoviesFunction = () => {
         navigation.navigate('Search')
     }

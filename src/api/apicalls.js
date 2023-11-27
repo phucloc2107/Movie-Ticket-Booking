@@ -9,8 +9,8 @@ export const searchMovies = (keyword) => {
   return `https://api.themoviedb.org/3/search/movie?api_key=${apikey}&query=${keyword}`;
 };
 export const movieDetails = (id) => {
-  return `https://api.themoviedb.org/3/movie/${id}?api_key=${apikey}`;
+  return `https://api.themoviedb.org/3/movie/569094?api_key=${apikey}`;
 };
 export const movieCastDetails = (id) => {
-  return `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apikey}`;
-};
+  return `https://api.themoviedb.org/3/movie/569094/credits?api_key=${apikey}`;
+}

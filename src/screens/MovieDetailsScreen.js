@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, ScrollView, StatusBar, ImageBackground, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, ScrollView, StatusBar, ImageBackground, Image, FlatList, TouchableOpacity } from 'react-native';
 import { movieDetails, movieCastDetails, baseImagePath } from '../api/apicalls';
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
 import AppHeader from '../components/AppHeader';
@@ -9,6 +9,7 @@ import CategoryHeader from '../components/CategoryHeader';
 import CastCard from '../components/CastCard';
 
 const getMovieDetails = async (movieid) => {
+    console.log(movieDetails(movieid))
     try {
         let response = await fetch(movieDetails(movieid));
         let json = await response.json();
@@ -17,6 +18,7 @@ const getMovieDetails = async (movieid) => {
         console.error('Something Went wrong in getMoviesDetails Function', error);
     }
 };
+
 
 const getMovieCastDetails = async (movieid) => {
     try {
@@ -36,6 +38,7 @@ const MovieDetailsScreen = ({ navigation, route }) => {
     const [movieData, setMovieData] = useState(undefined);
     const [movieCastData, setmovieCastData] = useState(undefined);
 
+
     useEffect(() => {
         (async () => {
             const tempMovieData = await getMovieDetails(route.params.movieid);
@@ -44,7 +47,7 @@ const MovieDetailsScreen = ({ navigation, route }) => {
 
         (async () => {
             const tempMovieCastData = await getMovieCastDetails(route.params.movieid);
-            setmovieCastData(tempMovieCastData);
+            setmovieCastData(tempMovieCastData.cast);
         })();
     }, []);
 
