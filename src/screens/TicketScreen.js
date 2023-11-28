@@ -90,7 +90,7 @@ const TicketScreen = ({ navigation, route }) => {
                         <View style={styles.subtitleContainer}>
                             <Text style={styles.subheading}>Seats</Text>
                             <Text style={styles.subtitle}>
-                                {ticketDate?.seatArray.slice(0, 3).map((item, index, number) => {
+                                {ticketDate?.seatArray.slice(0, 3).map((item, index, arr) => {
                                     return item + (index == arr.length - 1 ? '' : ', ');
                                 })}
                             </Text>
